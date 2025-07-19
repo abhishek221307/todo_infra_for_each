@@ -44,7 +44,7 @@ module "subnet" {
   rg_name              = "polaris_rgroup"
   virtual_network_name = "polaris_vnet"
   address_prefixes     = ["192.168.2.0/24"]
-}*/
+}
 
 variable "pip" {
   default = {
@@ -68,7 +68,7 @@ module "public_ip" {
   name       = "polaris_pip_backend"
  location   = "Japan East"
   rg_name    = "polaris_rgroup"
-}*/
+}
 
 variable "nic_config" {
   default = {
@@ -104,7 +104,7 @@ module "nic" {
   subnet               = "polaris_subnet_backend"
   public_ip            = "polaris_pip_backend"
   virtual_network_name = "polaris_vnet"
-}*/
+}
 
 variable "vm_config" {
   default = {
@@ -179,7 +179,7 @@ module "virtual_machine" {
               sudo apt install -y python3 python3-pip
               EOF
   )
-} */
+} 
 
 module "server" {
   depends_on      = [module.resource_group_name]
@@ -198,4 +198,4 @@ module "database" {
   sql_database_name = "polaris-database"
   sql_server_name   = "polaris-server"
   rg_name           = "polaris_rgroup"
-}
+}*/
